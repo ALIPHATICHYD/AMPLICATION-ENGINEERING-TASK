@@ -1,4 +1,4 @@
-# plugin- ALPHA PLUGIN
+# plugin- alpha 
 
 [![NPM Downloads](https://img.shields.io/npm/dt/plugin-{your-plugin-name})](https://www.npmjs.com/package/plugin-{your-plugin-name})
 
@@ -8,11 +8,13 @@ A short description of the plugin and its actions.
 
 The purpose of this plugin is to provide additional functionality to the application build process. It enhances the build process by performing specific actions or adding new features to the final application.
 
-## Configuration
-
-If a configuration is required, add it here.
-
 ## Scripts
+
+Install the plugin:
+
+```
+npm install plugin-alpha
+```
 
 ### `build`
 
@@ -25,4 +27,3 @@ Running `npm run dev` will watch your plugin's source code and automatically bun
 ## Usage
 
 Explain the usage of this plugin and its effect on the final build.
-
