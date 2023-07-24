@@ -13,7 +13,11 @@ describe('Count Plugin', () => {
     };
 
     // Apply the count plugin
-    countPlugin.entitiesMetadataHooks?.beforeApplyMetadata?.([], [userController]);
+    if (countPlugin.entitiesMetadataHooks?.beforeApplyMetadata) {
+      countPlugin.entitiesMetadataHooks.beforeApplyMetadata([], [userController]);
+    } else {
+      throw new Error('countPlugin.entitiesMetadataHooks.beforeApplyMetadata is not defined.');
+    }
 
     // Assert that the count method is added to the REST API Controller
     expect(userController.service.addMethod).toHaveBeenCalledWith(
@@ -23,7 +27,3 @@ describe('Count Plugin', () => {
     );
   });
 });
-function expect(addMethod: any) {
-    throw new Error('Function not implemented.');
-}
-
