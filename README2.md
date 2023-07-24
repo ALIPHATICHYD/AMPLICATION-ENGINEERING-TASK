@@ -33,4 +33,14 @@ Running `npm run dev` will watch your plugin's source code and automatically bun
 
 ## Usage
 
-Explain the usage of this plugin and its effect on the final build.
+
+Configure the plugin (if necessary):
+If the plugin requires configuration, make sure to provide the necessary settings to achieve the desired functionality. Refer to the Configuration section in this README for details on how to configure the plugin.
+
+Add the plugin to your build pipeline:
+Integrate the plugin into your build process. This might involve modifying your build scripts or configuration files to include the plugin's functionality during the build.
+
+Build your application:
+Now, when you run your build command (e.g., npm run build), the plugin's actions will be executed, and its effects will be reflected in the final build of your application.
+
+Remember to refer to the specific documentation of the plugin for any additional usage details or advanced features that it might offer.
