@@ -16,6 +16,13 @@ Install the plugin:
 npm install plugin-alpha
 ```
 
+Import the plugin into your project:
+    
+```
+// Example import in a JavaScript/TypeScript file
+import { YourPlugin } from 'plugin-{your-plugin-name}';
+```
+
 ### `build`
 
 Running `npm run build` will bundle your plugin with Webpack for production.
