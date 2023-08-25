@@ -42,6 +42,9 @@
     }
   },
   "dependencies": {
-    "@paljs/types": "^6.0.2"
+    "@paljs/types": "^6.0.2",
+    "@paljs/utils": "^6.0.2",
+    "graphql-tag": "^2.12.6",
+    "root": "github:paljs/prisma-tools"
   }
 }
