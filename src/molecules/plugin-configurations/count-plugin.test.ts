@@ -1,5 +1,5 @@
 import { EntityController } from 'amplication-server';
-import countPlugin from './count-plugin';
+import countPlugin from '..src/count-plugin';
 
 describe('Count Plugin', () => {
   it('should expose the count method in the REST API Controller', () => {

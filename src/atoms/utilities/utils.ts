@@ -1,7 +1,7 @@
 import { PluginInstallation } from "@amplication/code-gen-types";
-import { name as PackageName } from "../package.json";
-import { Settings } from './types';
-import defaultSettings from "../.amplicationrc.json";
+import { name as PackageName } from "../../../package.json";
+import { Settings } from '../../types';
+import defaultSettings from "../../../.amplicationrc.json";
 
 /**
  * Retrieving and merging plugin settings from default settings and user-defined settings.
