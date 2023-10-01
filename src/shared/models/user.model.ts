@@ -1,22 +1,16 @@
-// import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-// import { Document } from 'mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
-// @Schema()
-// export class User extends Document {
-//   @Prop({ required: true, unique: true })
-//   username: string;
+export async function validateEmail(email: string): Promise<boolean> {
+    return true;
+}
 
-//   @Prop({ required: true, unique: true })
-//   email: string;
+export async function User () {
+    return true;
+}
 
-//   @Prop({ required: true })
-//   password: string;
 
-//   @Prop({ default: Date.now })
-//   createdAt: Date;
 
-//   @Prop({ default: Date.now })
-//   updatedAt: Date;
-// }
+export const UserSchema = SchemaFactory.createForClass(User);
 
-// export const UserSchema = SchemaFactory.createForClass(User);
+
