@@ -42,10 +42,11 @@ class ExamplePlugin implements AmplicationPlugin {
       context.serverDirectories.srcDirectory
     );
 
-    return [...modules, ...staticsFiles]; 
+    return [...modules, ...staticsFiles];   
   }
 
   beforeCreateAdminUI(context: DsgContext, eventParams: CreateAdminUIParams) {
+
     // Same as beforeCreateServer but for a different event.
 
     return eventParams;
