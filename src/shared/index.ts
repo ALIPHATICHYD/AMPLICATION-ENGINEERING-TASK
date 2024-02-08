@@ -1,11 +1,4 @@
-import type {
-  AmplicationPlugin,
-  CreateAdminUIParams,
-  CreateServerParams,
-  DsgContext,
-  Events,
-  Module,
-} from "@amplication/code-gen-types";
+import type { AmplicationPlugin, CreateAdminUIParams, CreateServerParams, DsgContext, Events, Module } from "@amplication/code-gen-types";
 import { EventNames } from "@amplication/code-gen-types";
 import { resolve } from "path";
 
