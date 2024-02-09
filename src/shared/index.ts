@@ -18,17 +18,28 @@ class ExamplePlugin implements AmplicationPlugin {
     };
   }
 
-  async
-
-  beforeCreateServer(context: DsgContext, eventParams: CreateServerParams) {
-    return eventParams; // eventParams must return from before function. It will be used for the builder function.
+  /**
+   * Method to be executed before creating the server
+   * @param context - The DsgContext object
+   * @param eventParams - The CreateServerParams object
+   * @returns The CreateServerParams object
+   */
+  async beforeCreateServer(context: DsgContext, eventParams: CreateServerParams): Promise<CreateServerParams> {
+    return eventParams;
   }
 
+  /**
+   * Method to be executed after creating the server
+   * @param context - The DsgContext object
+   * @param eventParams - The CreateServerParams object
+   * @param modules - The array of Module objects
+   * @returns An array of Module objects
+   */
   async afterCreateServer(
     context: DsgContext,
     eventParams: CreateServerParams,
     modules: Module[]
-  ) {
+  ): Promise<Module[]> {
     const staticPath = resolve(__dirname, "./static");
     const staticsFiles = await context.utils.importStaticModules(
       staticPath,
@@ -38,12 +49,15 @@ class ExamplePlugin implements AmplicationPlugin {
     return [...modules, ...staticsFiles];   
   }
 
-  beforeCreateAdminUI(context: DsgContext, eventParams: CreateAdminUIParams) {
-
-    // Same as beforeCreateServer but for a different event.
-
+  /**
+   * Method to be executed before creating the admin UI
+   * @param context - The DsgContext object
+   * @param eventParams - The CreateAdminUIParams object
+   * @returns The CreateAdminUIParams object
+   */
+  async beforeCreateAdminUI(context: DsgContext, eventParams: CreateAdminUIParams): Promise<CreateAdminUIParams> {
     return eventParams;
   }
 }
 
-export default ExamplePlugin;
+export default ExamplePlugin; 
