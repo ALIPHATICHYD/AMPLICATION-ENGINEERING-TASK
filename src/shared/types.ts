@@ -1,37 +1,37 @@
-// Defining a custom interface for settings
+// Interface for application settings
 export interface Settings {
-  [key: string]: any;
+  [key: string]: string | number | boolean;
 }
 
-// Defining a custom interface for an example object
-export interface ExampleInterface {
+// Interface for an example entity
+export interface ExampleEntity {
   id: string;
   name: string;
   description?: string;
 }
 
-// Defining a custom enum for an example status
+// Enum for example status
 export enum ExampleStatusEnum {
   ACTIVE = "active",
   INACTIVE = "inactive",
   PENDING = "pending",
 }
 
-// Defining a custom enum for an example role
+// Enum for example roles
 export enum ExampleRoleEnum {
   USER = "user",
   ADMIN = "admin",
 }
 
-export type ExampleResponse = ExampleInterface | null;
+export type ExampleResponse = ExampleEntity | null;
 
-export type ExampleArray = ExampleInterface[];
+export type ExampleArray = ExampleEntity[];
 
-export type ExampleCallback = (example: ExampleInterface) => void;
+export type ExampleCallback = (example: ExampleEntity) => void;
 
-export type OptionalCallback = ((data: any) => void) | null;
+export type OptionalCallback = ((data: unknown) => void) | null;
 
-export type ExampleDictionary = Record<string, ExampleInterface>;
+export type ExampleDictionary = Record<string, ExampleEntity>;
 
 export type ExampleStatusArray = ExampleStatusEnum[];
 
