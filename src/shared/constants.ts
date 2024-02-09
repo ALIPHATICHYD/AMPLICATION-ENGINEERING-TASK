@@ -1,27 +1,27 @@
-import { join } from "path";
+import { resolve } from "path";
 
-export const ExampleConst = "example";
+export const EXAMPLE_CONST = "example";
 
-export const staticsPath = join(__dirname, "static"); // Example: Path to serve static files
-export const templatesPath = join(__dirname, "templates"); // Example: Path to templates
+export const STATICS_PATH = resolve(__dirname, "static");
+export const TEMPLATES_PATH = resolve(__dirname, "templates");
 
 // Database connection information
-export const databaseConfig = {
-  host: "localhost",
-  port: 5432,
-  username: "your_db_username",
-  password: "your_db_password",
-  database: "your_database_name",
+export const DATABASE_CONFIG = {
+  host: process.env.DB_HOST || "localhost",
+  port: Number(process.env.DB_PORT) || 5432,
+  username: process.env.DB_USERNAME || "your_db_username",
+  password: process.env.DB_PASSWORD || "your_db_password",
+  database: process.env.DB_NAME || "your_database_name",
 };
 
 // API endpoints (relative to the server URL)
-export const apiEndpoints = {
-  user: "/api/users",
-  post: "/api/posts",
+export const API_ENDPOINTS = {
+  USER: "/api/users",
+  POST: "/api/posts",
 };
 
 // Configuration options for the application
-export const appConfig = {
-  debugMode: false,
-  maxUploadSize: 10 * 1024 * 1024, // 10MB
+export const APP_CONFIG = {
+  DEBUG_MODE: process.env.DEBUG_MODE === 'true' || false,
+  MAX_UPLOAD_SIZE: 10 * 1024 * 1024, // 10MB
 };
