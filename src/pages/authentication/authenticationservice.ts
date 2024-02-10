@@ -42,3 +42,38 @@ export class AuthService {
     return { accessToken };
   }
 }
+
+
+
+
+// import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+// import { Document } from 'mongoose';
+// import validator from 'validator'; // Importing a validation library
+
+// @Schema({ timestamps: true })
+// export class User extends Document {
+//   @Prop({ required: true, unique: true, validate: { validator: validateEmail, message: 'Invalid email address' } })
+//   email!: string;
+
+//   @Prop({ required: true })
+//   username!: string;
+
+//   // Add other user properties here
+//   // @Prop()
+//   // password!: string;
+
+//   // @Prop()
+//   // firstName!: string;
+
+//   // @Prop()
+//   // lastName!: string;
+// }
+
+// // Define the email validation function
+// function validateEmail(email: string): boolean {
+//   // Use a validation library (e.g., validator.js) for email validation
+//   return validator.isEmail(email);
+// }
+
+// // Export the User schema
+// export const UserSchema = SchemaFactory.createForClass(User);

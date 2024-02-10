@@ -50,7 +50,7 @@
     "controller": "^1.0.0",
     "entity": "^0.0.0",
     "graphql-tag": "^2.12.6",
-    "mongoose": "^7.6.3",
+    "mongoose": "^7.6.8",
     "root": "github:paljs/prisma-tools",
     "validator": "^13.11.0"
   }
