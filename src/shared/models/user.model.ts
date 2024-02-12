@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import validator from 'validator'; // Importing a validation library
+import validator from 'validator';
 
 @Schema
 export class User extends Document {
