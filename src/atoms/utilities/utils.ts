@@ -1,7 +1,43 @@
 import { PluginInstallation } from "@amplication/code-gen-types";
 import { name as PackageName } from "../../../package.json";
-import { Settings } from '../../types';
+import { Settings } from "../../../shared/types";
 import defaultSettings from "../../../.amplicationrc.json";
+
+/**
+ * Find a plugin installation by package name.
+ *
+ * @param {PluginInstallation[]} pluginInstallations - An array of plugin installations.
+ *
+ * @returns {PluginInstallation} The found plugin installation.
+ * @throws {Error} If the plugin installation is not found.
+ */
+const findPluginInstallation = (
+  pluginInstallations: PluginInstallation[]
+): PluginInstallation => {
+  const plugin = pluginInstallations.find(
+    (installation) => installation.npm === PackageName
+  );
+
+  if (!plugin) {
+    throw new Error(`Plugin '${PackageName}' is not installed.`);
+  }
+
+  return plugin;
+};
+
+/**
+ * Merge default settings with user-defined settings.
+ *
+ * @param {Settings | undefined} userSettings - User-defined settings.
+ *
+ * @returns {Settings} The merged settings.
+ */
+const mergeSettings = (userSettings: Settings | undefined): Settings => {
+  return {
+    ...defaultSettings,
+    ...userSettings,
+  };
+};
 
 /**
  * Retrieving and merging plugin settings from default settings and user-defined settings.
@@ -9,29 +45,13 @@ import defaultSettings from "../../../.amplicationrc.json";
  * @param {PluginInstallation[]} pluginInstallations - An array of plugin installations.
  *
  * @returns {Settings} The merged plugin settings.
- * @throws {Error} If the plugin installation is not found.
  */
 export const getPluginSettings = (
   pluginInstallations: PluginInstallation[]
 ): Settings => {
-  // Finding the plugin installation by package name
-  const plugin = pluginInstallations.find(
-    (installation) => installation.npm === PackageName
-  );
-
-  // If the plugin installation is not found, throw an error
-  if (!plugin) {
-    throw new Error(`Plugin '${PackageName}' is not installed.`);
-  }
-
-  // Extract user-defined settings or use an empty object if not defined
+  const plugin = findPluginInstallation(pluginInstallations);
   const userSettings = plugin.settings || {};
-
-  // Merge default settings with user-defined settings
-  const settings: Settings = {
-    ...defaultSettings,
-    ...userSettings,
-  };
+  const settings = mergeSettings(userSettings);
 
   return settings;
 };
