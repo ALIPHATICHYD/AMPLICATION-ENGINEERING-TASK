@@ -1,6 +1,6 @@
 import { PluginInstallation } from "@amplication/code-gen-types";
 import { name as PackageName } from "../../../package.json";
-import { Settings } from "../../../shared/types";
+import { Settings } from "../../shared/types"
 import defaultSettings from "../../../.amplicationrc.json";
 
 /**
