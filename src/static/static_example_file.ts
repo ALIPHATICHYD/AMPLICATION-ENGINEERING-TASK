@@ -1,11 +1,18 @@
-// @Amplication Plugin Template.
-// This is an example static file, it should be removed after cloning the template.
+interface Email {
+  email: string;
+}
 
-/**
- * This file is a static file that can be added/manipulated and inserted to the Amplication build
- */
-const exampleFunction = () => {
-  console.log("I'm an example static function");
-};
+function validateEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
 
-export default exampleFunction;
+function validateUserData(userData: Email): boolean {
+  const { email } = userData;
+  if (!email) {
+    return false; 
+  }
+  return validateEmail(email);
+}
+
+export default validateUserData;
