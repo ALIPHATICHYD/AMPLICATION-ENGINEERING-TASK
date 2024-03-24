@@ -11,9 +11,7 @@ import defaultSettings from "../../../.amplicationrc.json";
  * @returns {PluginInstallation} The found plugin installation.
  * @throws {Error} If the plugin installation is not found.
  */
-const findPluginInstallation = (
-  pluginInstallations: PluginInstallation[]
-): PluginInstallation => {
+const findPluginInstallation = ( pluginInstallations: PluginInstallation[] ): PluginInstallation => {
   const plugin = pluginInstallations.find(
     (installation) => installation.npm === PackageName
   );
@@ -46,9 +44,7 @@ const mergeSettings = (userSettings: Settings | undefined): Settings => {
  *
  * @returns {Settings} The merged plugin settings.
  */
-export const getPluginSettings = (
-  pluginInstallations: PluginInstallation[]
-): Settings => {
+export const getPluginSettings = ( pluginInstallations: PluginInstallation[] ): Settings => {
   const plugin = findPluginInstallation(pluginInstallations);
   const userSettings = plugin.settings || {};
   const settings = mergeSettings(userSettings);
