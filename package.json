@@ -52,6 +52,7 @@
     "graphql-tag": "^2.12.6",
     "mongoose": "^7.6.8",
     "root": "github:paljs/prisma-tools",
+    "typeorm": "^0.3.20",
     "validator": "^13.11.0"
   }
 }

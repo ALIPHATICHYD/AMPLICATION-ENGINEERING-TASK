@@ -19,7 +19,5 @@ function validateEmail(email: string): boolean {
   return validator.isEmail(email);
 }
 
-export const UserSchema = SchemaFactory.createForClass(User);
-
 // Export the User schema
 export const UserSchema = SchemaFactory.createForClass(User);
